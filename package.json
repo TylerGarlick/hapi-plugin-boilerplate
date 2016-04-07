@@ -1,0 +1,60 @@
+{
+  "name": "hapi-plugin-boilerplate",
+  "version": "1.0.0",
+  "description": "Hapi Plugin Boilerplate to help ease Hapi Plugin development",
+  "main": "build/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "esw --quiet",
+    "test": "NODE_ENV=${NODE_ENV:-local} mocha **/**.tests.js",
+    "build": "babel src -s inline -d build",
+    "prepublish": "npm run build",
+    "ci": "npm run lint && npm test",
+    "start": "npm run build && npm run start:development",
+    "start:development": "node scripts/development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TylerGarlick/hapi-plugin-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TylerGarlick/hapi-plugin-boilerplate/issues"
+  },
+  "homepage": "https://github.com/TylerGarlick/hapi-plugin-boilerplate#readme",
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-core": "^6.7.4",
+    "babel-eslint": "^6.0.2",
+    "babel-preset-pundits": "^1.0.4",
+    "babel-register": "^6.7.2",
+    "blipp": "^2.3.0",
+    "code": "^2.2.0",
+    "eslint": "^2.7.0",
+    "eslint-config-leisurelink": "^1.0.1",
+    "eslint-watch": "^2.1.10",
+    "glue": "^3.2.0",
+    "hapi-swaggered": "^2.6.0",
+    "hapi-swaggered-ui": "^2.3.1",
+    "inert": "^3.2.0",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5",
+    "rejoice": "^3.1.0",
+    "source-map-support": "^0.4.0",
+    "vision": "^4.1.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.3.4",
+    "good": "^6.6.0",
+    "good-console": "^5.3.1",
+    "hapi": "^13.3.0",
+    "hapi-async-handler": "^1.0.3",
+    "hapi-router": "^3.4.1",
+    "joi": "^8.0.5",
+    "lodash": "^4.8.2"
+  }
+}
